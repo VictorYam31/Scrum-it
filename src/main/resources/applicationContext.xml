@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="personServiceImpl" class="ch.bsgroup.scrumit.service.impl.PersonServiceImpl" />
+	<bean id="projectServiceImpl" class="ch.bsgroup.scrumit.service.impl.ProjectServiceImpl" />
+	<bean id="sprintServiceImpl" class="ch.bsgroup.scrumit.service.impl.SprintServiceImpl" />
+	<bean id="sprintBacklogServiceImpl" class="ch.bsgroup.scrumit.service.impl.SprintBacklogServiceImpl" />
+	<bean id="taskServiceImpl" class="ch.bsgroup.scrumit.service.impl.TaskServiceImpl" />
+	<bean id="issueServiceImpl" class="ch.bsgroup.scrumit.service.impl.IssueServiceImpl" />
+	<bean id="productBacklogServiceImpl" class="ch.bsgroup.scrumit.service.impl.ProductBacklogServiceImpl" />
+</beans>

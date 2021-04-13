@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="personServiceImpl" class="ch.bsgroup.scrumit.service.impl.PersonServiceImpl" />
+	<bean id="projectServiceImpl" class="ch.bsgroup.scrumit.service.impl.ProjectServiceImpl" />
+	<bean id="sprintServiceImpl" class="ch.bsgroup.scrumit.service.impl.SprintServiceImpl" />
+<!-- 	<bean id="userStoryServiceImpl" class="ch.bsgroup.scrumit.service.impl.UserStoryServiceImpl" /> -->
+	<bean id="sprintBacklogServiceImpl" class="ch.bsgroup.scrumit.service.impl.SprintBacklogServiceImpl" />
+	<bean id="taskServiceImpl" class="ch.bsgroup.scrumit.service.impl.TaskServiceImpl" />
+	<bean id="issueServiceImpl" class="ch.bsgroup.scrumit.service.impl.IssueServiceImpl" />
+	<bean id="productBacklogServiceImpl" class="ch.bsgroup.scrumit.service.impl.ProductBacklogServiceImpl" />
+	<bean id="emailServiceImpl" class="ch.bsgroup.scrumit.service.impl.EmailServiceImpl"/>
+
+	<bean id="projectService" class="ch.bsgroup.scrumit.service.impl.ProjectServiceImpl" />
+	<bean id="personService" class="ch.bsgroup.scrumit.service.impl.PersonServiceImpl" />
+	<bean id="issueService" class="ch.bsgroup.scrumit.service.impl.IssueServiceImpl" />
+	<bean id="emailService" class="ch.bsgroup.scrumit.service.impl.EmailServiceImpl"/>
+	<bean id="projectPersonController" class="ch.bsgroup.scrumit.controller.ProjectPersonController">
+		<property name="projectService">
+			<ref local="projectService"/>
+		</property>
+		<property name="personService">
+			<ref local="personService"/>
+		</property>
+		<property name="issueService">
+			<ref local="issueService"/>
+		</property>
+	</bean>
+	<bean id="productBacklogService" class="ch.bsgroup.scrumit.service.impl.ProductBacklogServiceImpl"></bean>
+	<bean id="projectProductBacklogController" class="ch.bsgroup.scrumit.controller.ProjectProductBacklogController">
+		<property name="projectService">
+			<ref local="projectService"/>
+		</property>
+		<property name="productBacklogService">
+			<ref local="productBacklogService"/>
+		</property>
+	</bean>
+	<bean id="sprintService" class="ch.bsgroup.scrumit.service.impl.SprintServiceImpl" />
+<!-- 	<bean id="userStoryService" class="ch.bsgroup.scrumit.service.impl.UserStoryServiceImpl" /> -->
+	<bean id="sprintBacklogService" class="ch.bsgroup.scrumit.service.impl.SprintBacklogServiceImpl" />
+	<bean id="burnDownChartService" class="ch.bsgroup.scrumit.service.impl.BurnDownChartServiceImpl" />
+	<bean id="taskService" class="ch.bsgroup.scrumit.service.impl.TaskServiceImpl" />
+	<bean id="sprintUserstoryController" class="ch.bsgroup.scrumit.controller.SprintUserstoryController">
+		<property name="sprintService">
+			<ref local="sprintService"/>
+		</property>
+<!-- 		<property name="userStoryService"> -->
+<!-- 			<ref local="userStoryService"/> -->
+<!-- 		</property> -->
+		<property name="sprintBacklogService">
+			<ref local="sprintBacklogService" />
+		</property>
+		<property name="projectService">
+			<ref local="projectService"/>
+		</property>
+		<property name="burnDownChartService">
+			<ref local="burnDownChartService"/>
+		</property>
+		<property name="taskService">
+			<ref local="taskService"/>
+		</property>
+	</bean>
+
+	<bean id="boardController" class="ch.bsgroup.scrumit.controller.BoardController">
+		<property name="sprintService">
+			<ref local="sprintService"/>
+		</property>
+		<property name="projectService">
+			<ref local="projectService"/>
+		</property>
+		<property name="personService">
+			<ref local="personService"/>
+		</property>
+<!-- 		<property name="userStoryService"> -->
+<!-- 			<ref local="userStoryService"/> -->
+<!-- 		</property> -->
+		<property name="sprintBacklogService">
+			<ref local="sprintBacklogService" />
+		</property>
+		<property name="taskService">
+			<ref local="taskService"/>
+		</property>
+		<property name="issueService">
+			<ref local="issueService"/>
+		</property>
+		<property name="burnDownChartService">
+			<ref local="burnDownChartService"/>
+		</property>
+		<property name="emailService">
+			<ref local="emailService"/>
+		</property>
+	</bean>
+</beans>
